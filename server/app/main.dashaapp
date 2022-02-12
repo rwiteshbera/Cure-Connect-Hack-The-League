@@ -1,0 +1,20 @@
+{
+  "formatVersion": "2",
+  "dialogue": {
+    "file": "main.dsl"
+  },
+  "nlu": {
+    "language": "en-US",
+    "skills": [
+      "sentiment",
+      "common_phrases",
+      "common-numbers"
+    ]
+  },
+  "nlg": {
+    "type": "phrases",
+    "file": "phrasemap.json",
+    "signatureFile": "phrasemap.json"
+  },
+  "name": "healthcare-meeting-otp"
+}

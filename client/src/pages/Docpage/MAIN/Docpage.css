@@ -1,0 +1,15 @@
+.App {
+  background: #00aacf;
+  height: 100%;
+  width: 100vw;
+  padding-bottom: 2rem;
+}
+
+.docpage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap:wrap;
+    gap: 2rem;
+    width: 100%;
+}

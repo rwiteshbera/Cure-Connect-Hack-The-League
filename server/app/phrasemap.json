@@ -1,0 +1,25 @@
+{
+  "default": {
+    "voiceInfo": {
+      "lang": "en-US",
+      "speaker": "default",
+      "speed": 0.60
+    },
+
+    "phrases": {
+      "greeting": {
+        "first": [
+          { "text": "Thank you for contacting with Health Care Support." },
+          { "id": "name", "type": "dynamic" },
+          { "text": "Your meeting I D for video conference is. 3. 4. 2. 2. 3. 5." },
+          { "text": "I repeat once again . 3. 4. 2. 2. 3. 5. " },
+          { "text": "Have a great day!" }
+        ]        
+      }
+    },
+    "types": {},
+    "macros": {
+      "greeting": {}
+    }
+  }
+}

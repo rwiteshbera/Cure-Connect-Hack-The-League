@@ -1,0 +1,7 @@
+#sawo-container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 35vh;
+    width: 540px;
+}

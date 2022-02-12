@@ -1,0 +1,40 @@
+.header-img {
+  width: 10vmin;
+  margin-left:5vw;
+}
+.Title_main {
+  width: fit-content;
+  display: flex;
+}
+.Title_main h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #517ef2;
+  margin-left: -5vw;
+  margin-right: 1rem;
+}
+
+
+.home-header {
+  height: 15vh;
+}
+.header-circle {
+  position: absolute;
+  top: -5%;
+  right: -5%;
+  border-radius: 50%;
+  width: 16vw;
+  height: 16vw;
+  background-color: #63a0ff;
+}
+
+.header-circle2 {
+  position: absolute;
+
+  top: -5%;
+  right: -2%;
+  border-radius: 50%;
+  width: 12vw;
+  height: 12vw;
+  background: #517ef2;
+}

@@ -1,0 +1,13 @@
+.join-btn-custom, .join-btn-custom:hover{
+    color: white !important;
+}
+
+.custom-card-width {
+    width: 18rem !important;
+}
+
+@media screen and (max-width: 1480px) {
+    .docList{
+        margin-top: 10vh!important;
+    }
+}

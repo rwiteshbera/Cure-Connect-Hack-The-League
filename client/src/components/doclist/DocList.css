@@ -1,0 +1,74 @@
+.patient-header {
+    height: 12vh;
+}
+.patient-header > h1 {
+    position: fixed;
+    right: 15%;
+    top: 3%;
+    font-family: Ranchers, Arial, Helvetica, sans-serif;
+    font-size: 2.8em;
+    font-weight: bold;
+    color: rgba(10, 82, 149, 0.9);
+    z-index: -1;
+}
+
+.patient-header > h3 {
+    position: fixed;
+    right: 15%;
+    top: 10%;
+    font-family: Roboto, sans-serif;
+    font-size: 2.5em;
+    line-height: 42px;
+    color: rgba(103, 81, 242, 0.72);
+    z-index: -1;
+}
+
+.elli1{
+    position: fixed;
+    width: 10vmax;
+    height: 10vmax;
+    right: -2vw;
+    top: -2vw;
+    border-radius: 50%;
+
+    background: #517EF2;
+}
+
+.elli2{
+    position: fixed;
+    width: 15vmax;
+    height: 15vmax;
+    right: -5vw;
+    top: -4vw;
+    border-radius: 50%;
+    background: rgba(99, 160, 255, 0.21);
+}
+
+.title-doctors {
+    font-family: Ribeye Marrow, sans-serif;
+    color: #1E3583;
+    font-size: 2em;
+    margin-left: 2vw;
+}
+
+.nav__list {
+    display: flex;
+    margin: 0 auto;
+    font-size: 1.5em;
+    gap: 0.4em;
+    width: 95vw;
+}
+.nav__list li {
+    border: 2px solid blue;
+    border-radius: 10px;
+    padding: 0em 1em;
+}
+
+.nav__list li:hover {
+    cursor: pointer;
+    background-color: rgb(221,235,255);
+}
+
+.main-container {
+    background-color: white;
+}

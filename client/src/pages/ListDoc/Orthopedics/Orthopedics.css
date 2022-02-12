@@ -1,0 +1,97 @@
+.add{
+    margin-top: 100px;
+}
+
+.img{
+    height: 400px;
+    margin-top:0px;
+}
+.img2{
+    height: 300px;
+    padding: 20px;
+    border-radius: 20px;
+}
+.appoint{
+    font-family: Rochester;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 46px;
+
+    color: rgba(10, 82, 149, 0.9);
+
+}
+.body{
+    background: #DBE6F8;
+    border-radius: 20px;
+}
+.body2{
+    margin-top: 100px;
+    background: linear-gradient(0deg, rgba(99, 199, 255, 0.44), rgba(99, 199, 255, 0.44)), linear-gradient(0deg, #DDD8D8, #DDD8D8), linear-gradient(0deg, #DDD8D8, #DDD8D8), #DDD8D8;
+    border-radius: 30px;
+}
+.button{
+    background: #63A0FF;
+    border-radius: 20px;
+    width:200px;
+    float: right;
+    border: none;
+    color: white;
+    font-weight:bold;
+    font-size: 24px;
+    margin-top: 100px;
+}
+.button2{
+    background: #636dff;
+    border-radius: 20px;
+    width:300px;
+    height:70px;
+    border: none;
+    color: white;
+    font-weight:bold;
+    font-size: 24px;
+    margin-top: 15px;
+}
+.textjoin{
+    color:#DDD8D8;
+    text-decoration: none;
+}
+.body{
+    margin-top:20px;
+}
+.text2{
+    background-color: black;
+}
+.text3{
+    font-family: Rochester;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 31px;
+
+    color: #000000c7;
+}
+.frame{
+    margin-top: 100px;
+}
+
+.docname{
+    position: absolute;
+    font-family: Risque;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+
+    color: #0711FD;
+}
+.docsubname{
+    position: absolute;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    margin-top: 40px;
+
+    color: #0E91F0;
+}

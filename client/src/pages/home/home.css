@@ -1,0 +1,22 @@
+.home-img {
+  height: 60vh;
+}
+
+.btn-my {
+  width: 40vh;
+  padding: 10px 20px;
+  background: #63a0ff;
+  color: white;
+  border-radius: 26px;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.text-home {
+  text-decoration: none;
+  color: white;
+}
+.text-home:hover {
+  text-decoration: none;
+  color: white;
+}

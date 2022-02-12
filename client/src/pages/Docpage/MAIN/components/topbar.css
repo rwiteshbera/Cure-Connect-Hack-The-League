@@ -1,0 +1,17 @@
+.topbar{
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e5e5e5;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 15px;
+    position: relative;
+    z-index: 1000;
+}
+
+.topbarWrapper{
+    height: 100%;
+    padding: 0px 20px;
+    display: flex;
+
+    justify-content: space-between;
+}
