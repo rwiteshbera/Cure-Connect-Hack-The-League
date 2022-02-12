@@ -14,7 +14,7 @@ export default function Header() {
           />
         </div>
         <div className="Title_main text-center text-uppercase">
-          <h1 className="">Health Consult App</h1>
+          <h1 className="">Cure Connect</h1>
           <span><img src={call24} alt="" width={"50px"}/></span>
         </div>
         <div className="design">

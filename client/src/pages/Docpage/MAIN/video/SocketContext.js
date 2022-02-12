@@ -93,6 +93,30 @@ const ContextProvider = ({ children }) => {
     window.location.reload();
   };
 
+  const turnCameraOn = () => {
+    const constraints = { video: true, audio: true };
+    navigator.mediaDevices
+      .getUserMedia(constraints)
+      .then((stream) => {
+        setStream(stream);
+        myVideo.current.srcObject = stream;
+      })
+      .catch((error) => {
+        console.error("Error accessing media devices.", error);
+      });
+  }
+
+  // if camera is on, then turn it off
+  const turnCameraOff = () => {
+    const constraints = { video: false, audio: true };
+    navigator.mediaDevices
+      .getUserMedia(constraints)
+      .then((stream) => {
+        setStream(stream);
+        myVideo.current.srcObject = stream;
+      })
+    }
+
   return (
     <SocketContext.Provider
       value={{
@@ -108,6 +132,8 @@ const ContextProvider = ({ children }) => {
         callUser,
         leaveCall,
         answerCall,
+        turnCameraOn,
+        turnCameraOff
       }}
     >
       {children}

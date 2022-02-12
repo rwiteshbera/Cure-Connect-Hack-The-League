@@ -1,6 +1,6 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { SocketContext } from "./SocketContext";
-import { Button, Container, Row, Col } from "react-bootstrap";
+import { Button} from "react-bootstrap";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import "./video.css";
 
@@ -18,10 +18,13 @@ const Video = () => {
     stream,
     call,
     answerCall,
+    turnCameraOn,
+    turnCameraOff
   } = useContext(SocketContext);
 
   const [idToCall, setIdToCall] = useState("");
   const [muteBtnText, setMuteBtnText] = useState("Mute Audio");
+  const [turnCameraOnOff, setTurnCameraOnOff] = useState("Turn Camera On");
 
   // Button to mute audio
   const MuteUnmute = () => {
@@ -42,6 +45,16 @@ const Video = () => {
       callUser(idToCall);
     }
   };
+
+  const camerOnOff = () => {
+    if (turnCameraOnOff === "Turn Camera Off") {
+      turnCameraOff();
+      setTurnCameraOnOff("Turn Camera On");
+    } else if (turnCameraOnOff === "Turn Camera On") {
+      turnCameraOn();
+      setTurnCameraOnOff("Turn Camera Off");
+    }
+  }
 
   return (
     <div className="main-custom">
@@ -121,6 +134,8 @@ const Video = () => {
                 Call
               </Button>
             )}
+
+            <Button className="btn btn-success" onClick={camerOnOff}>{turnCameraOnOff}</Button>
           </form>
         </div>
       </div>
