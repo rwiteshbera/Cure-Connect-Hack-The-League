@@ -46,7 +46,6 @@ export default function Register() {
         },
         config
       );
-      console.log(data);
       localStorage.setItem("Info", JSON.stringify(data));
       navigate("/Doctor");
     } catch (err) {}

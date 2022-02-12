@@ -1,7 +1,9 @@
 const dasha = require("@dasha.ai/sdk");
 const express = require("express");
-
 const app = express();
+const cors = require('cors');
+const http = require('http');
+const server = http.createServer(app);
 const fs = require("fs");
 const connectDB = require("./config/db.js");
 connectDB();
@@ -81,25 +83,19 @@ app.use("/api/requests", Reqrouter);
 
 app.use(not_found);
 
-//app.use(error_handler);
-const port = 5000 || process.env.PORT;
-
-const server = app.listen(port, () => {
-  console.log(`listening port ${port}`);
-});
 
 /**
  * SERVER SOCKET MSG
  */
-const io = require("socket.io");
-const socketio = new io.Server(server, {
-  pingTimeout: 60000,
+ const io = require('socket.io')(server, {
   cors: {
-    origin: "http://localhost:3000",
-  },
+      origin: '*',
+      method: ['GET','POST']
+  }
 });
 
-socketio.on("connection", (socket) => {
+
+io.on("connection", (socket) => {
   socket.on("setup", async (userID) => {
     socket.join(userID);
     console.log(` ${userID} connected `);
@@ -108,17 +104,28 @@ socketio.on("connection", (socket) => {
   socket.on("sendcallreq", (data) => {
     socket.in(data.docID).emit("gotreq", data);
   });
-  socket.emit("me", socket.id);
   socket.emit("getroomID", socket.id);
+  console.log(socket.id);
+  socket.emit("me", socket.id);
+
   socket.on("disconnect", () => {
     socket.broadcast.emit("Call ended!");
   });
 
   socket.on("calluser", ({ userToCall, signalData, from, name }) => {
-    io.in(userToCall).emit("calluser", { signal: signalData, from, name });
+    io.to(userToCall).emit("calluser", { signal: signalData, from, name });
   });
 
   socket.on("answercall", (data) => {
-    io.in(data.to).emit("callaccepted", data.signal);
+    io.to(data.to).emit("callaccepted", data.signal);
   });
+});
+
+app.use(cors());
+
+//app.use(error_handler);
+const port = 5000 || process.env.PORT;
+
+server.listen(port, () => {
+  console.log(`listening port ${port}`);
 });

@@ -27,7 +27,6 @@ function Docpage() {
   const fetch_all_req = async (tokens) => {
     try {
       socket.on("gotreq", async (newdata) => {
-        console.log(newdata);
         const config = { headers: { Authorization: `Bearer ${tokens}` } };
         const { data } = await axios.get("/api/user/GetAllReq", config);
         setdata(data);

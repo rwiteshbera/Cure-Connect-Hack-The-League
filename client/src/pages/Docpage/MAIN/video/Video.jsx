@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { SocketContext } from "./SocketContext";
 import { Button, Container, Row, Col } from "react-bootstrap";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import "./App.css";
+import "./video.css";
 
-const Video = () => {
+const Video = () => {  
   const {
     me,
     name,
@@ -44,8 +44,8 @@ const Video = () => {
   };
 
   return (
-    <div className="main">
-      <h4 id="title">HealthCare Video Conference</h4>
+    <div className="main-custom">
+      <h4 id="#title-custom">HealthCare Video Conference</h4>
 
       {/* Incoming Call Panel  */}
       <div className="notification">
@@ -59,7 +59,7 @@ const Video = () => {
         )}
       </div>
 
-      <div className="videos">
+      <div className="ideos-custom">
         {/* My Own Video */}
         {stream && (
           <div className="myvideo">
@@ -82,9 +82,9 @@ const Video = () => {
       </div>
 
       <div className="box">
-        <div className="options">
+        <div className="options-custom ">
           {callAccepted && (
-            <Button className="mute-button" onClick={MuteUnmute}>
+            <Button className="mute-button-custom" onClick={MuteUnmute}>
               {muteBtnText}
             </Button>
           )}
@@ -96,9 +96,9 @@ const Video = () => {
               onChange={(e) => setName(e.target.value)}
             />
             <CopyToClipboard text={me}>
-              <Button className="button">Copy Id</Button>
+              <Button className="button-custom">Copy Id</Button>
             </CopyToClipboard>
-
+              
             <input
               type="text"
               id="enter-id"
@@ -108,12 +108,12 @@ const Video = () => {
             />
 
             {callAccepted && !callEnded ? (
-              <Button className="button btn btn-danger" onClick={leaveCall}>
+              <Button className="button-custom btn btn-danger" onClick={leaveCall}>
                 Hang Up
               </Button>
             ) : (
               <Button
-                className="button btn btn-primary"
+                className="button-custom btn btn-primary"
                 onClick={() => {
                   callFunction();
                 }}

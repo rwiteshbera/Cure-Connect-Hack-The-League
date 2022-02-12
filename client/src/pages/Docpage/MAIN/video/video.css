@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
 
-.main {
+.main-custom {
     text-align: center;
     height:100vh;
     background-image: linear-gradient(rgb(175, 221, 235), rgb(199, 190, 233));
 }
-#title {
+#title-custom {
     padding: 1rem 0rem;
     border-bottom: 2px solid rgba(47, 0, 255, 0.61);
     background-color: rgb(245, 245, 248);
@@ -15,53 +15,53 @@
     font-size: 2rem;
 }
 
-.videos{
+.videos-custom{
     display: flex;
-    /* width: 100vw; */
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.videos p {
+.videos-custom p {
     text-align: left;
     margin-left: 1vw;
     margin-bottom: 0rem;
 }
 
 video{
-    width:40vw;
+    width:95%;
     margin: 0.5rem 0.5rem;
     border: 3px solid rgba(18, 17, 92, 0.829);
     /* height: 50vh; */
 }
-.options {
+.options-custom {
     margin: 0 auto;
     width: 100%;
 }
 
-.button {
+.ideos-custom {
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+}
+.button-custom {
     margin: 1rem 2rem;
     padding: 0.4rem 1rem;
     
 }
 
-.mute-button{
+.mute-button-custom{
     margin: 0rem 2rem;
     padding: 0.4rem 1rem;
 }
 /* Android media queries */
 @media screen and (min-device-width: 0px) and (max-device-width: 768px) { 
-    .main{
+    .main-custom{
         height: 100%;
     }
-    .videos{
+    .videos-custom{
         flex-wrap: wrap;
         flex-direction: column-reverse;
         
     }
 
-    video{
-        width: 100vw;
-        margin: 0.5rem 0rem;
-    }
 }

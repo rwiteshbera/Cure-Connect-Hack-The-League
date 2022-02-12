@@ -28,7 +28,6 @@ const Userlogin = () => {
             { name, phone },
             config
           );
-          console.log(data);
           if (data.msg) {
             console.log(data.msg);
           } else {

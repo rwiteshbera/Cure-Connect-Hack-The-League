@@ -6,6 +6,7 @@ const SocketContext = createContext();
 
 // Paste your deployed application link here
 const socket = io("http://localhost:5000");
+// const socket = io("https://webrtc-heroku-rwitesh.herokuapp.com/");
 
 const ContextProvider = ({ children }) => {
   const [stream, setStream] = useState(null);
@@ -21,7 +22,6 @@ const ContextProvider = ({ children }) => {
 
   useEffect(() => {
     const constraints = { video: true, audio: true };
-
     navigator.mediaDevices
       .getUserMedia(constraints)
       .then((stream) => {
@@ -31,6 +31,7 @@ const ContextProvider = ({ children }) => {
       .catch((error) => {
         console.error("Error accessing media devices.", error);
       });
+
     socket.on("me", (id) => setMe(id));
 
     socket.on("calluser", ({ from, name: callerName, signal }) => {

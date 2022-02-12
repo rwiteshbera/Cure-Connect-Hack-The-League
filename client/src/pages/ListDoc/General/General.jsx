@@ -39,7 +39,6 @@ export default function Patient() {
         { senderID, receiverID },
         config
       );
-      console.log(api);
       const callData = { docID: receiverID, sender: senderID };
       socket.emit("sendcallreq", callData);
     } catch (err) {
