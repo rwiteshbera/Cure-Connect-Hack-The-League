@@ -1,3 +1,2 @@
 ####################################################################################################
-human: thank you
-human: good
+ai: Thank you for contacting with Health Care Support.Keep yourself and others safe: Do it all!Get vaccinated as soon as it’s your turn and follow local guidance on vaccination.Clean your hands frequently with alcohol-based hand rub or soap and water.Wear a properly fitted mask when physical distancing is not possible and in poorly ventilated settings.Have a great day!

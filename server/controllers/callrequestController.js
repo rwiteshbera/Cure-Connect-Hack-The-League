@@ -4,15 +4,15 @@ const asyncHandler = require("express-async-handler");
 const sendRoomid = asyncHandler(async (req, res) => {
   const { patientPhone } = req.body;
   const { me } = req.body;
-  const accountSid = "AC7a18f6bb30af812ce19f038d016bd4f1";
-  const authToken = "1f886b11ee4fe89fa1079e6f6899e976";
+  const accountSid = process.env.accountSid;
+  const authToken = process.env.authToken;
   const client = require("twilio")(accountSid, authToken);
 
   client.messages
     .create({
       body: ` Cure Connect Meeting ID: ${me}`,
-      messagingServiceSid: "MG0939de83f51236c0700606d29c196c63",
-      to: patientPhone
+      messagingServiceSid: process.env.messageSid,
+      to: patientPhone,
     })
     .then((m) => res.json(m))
     .done();
@@ -41,4 +41,21 @@ const sendREQ = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { sendREQ, sendRoomid };
+const delReq = asyncHandler(async (req, res) => {
+  const { id } = req.body;
+  if (!id) {
+    console.log("Invalid Data");
+    return res.status(400);
+  }
+  try {
+    var req = await CALL.remove({ id }, function (err) {
+      console.log("deleted");
+    });
+    res.json("deleted successful");
+  } catch (err) {
+    res.status(400);
+    throw new Error(err.message);
+  }
+});
+
+module.exports = { sendREQ, sendRoomid, delReq };

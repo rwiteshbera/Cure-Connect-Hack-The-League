@@ -13,4 +13,5 @@ router.route("/LoginDoctor").post(authUser);
 router.route("/").post(registerDoctor);
 router.route("/GetDocs").get(All_Doctor);
 router.route("/GetAllReq").get(Auth, get_All_requests);
+
 module.exports = router;

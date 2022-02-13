@@ -3,18 +3,25 @@
     "voiceInfo": {
       "lang": "en-US",
       "speaker": "default",
-      "speed": 0.60
+      "speed": 0.6
     },
 
     "phrases": {
       "greeting": {
         "first": [
-          { "text": "Thank you for contacting with Health Care Support." },
-          { "id": "name", "type": "dynamic" },
-          { "text": "Your meeting I D for video conference is. 3. 4. 2. 2. 3. 5." },
-          { "text": "I repeat once again . 3. 4. 2. 2. 3. 5. " },
+          { "text": "Thank you for contacting with Cure Connect Team." },
+          { "text": "Keep yourself and others safe: Do it all!" },
+          {
+            "text": "Get vaccinated as soon as it’s your turn and follow local guidance on vaccination."
+          },
+          {
+            "text": "Clean your hands frequently with alcohol-based hand rub or soap and water."
+          },
+          {
+            "text": "Wear a properly fitted mask when physical distancing is not possible and in poorly ventilated settings."
+          },
           { "text": "Have a great day!" }
-        ]        
+        ]
       }
     },
     "types": {},
