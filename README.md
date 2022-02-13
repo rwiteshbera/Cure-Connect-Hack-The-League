@@ -2,6 +2,8 @@
 
 ###### A digital healthcare platform that enables people to consult with top doctors on video conferences. Cure Connect connects the doctors and the patients within few seconds.
 
+![Thumbnail](https://user-images.githubusercontent.com/73098407/153747478-4856c6b0-ee5c-4fb2-8d9f-b5e305e3dae9.png)
+
 ###### Built using
 
 - ReactJs
