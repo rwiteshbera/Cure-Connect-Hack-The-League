@@ -58,7 +58,7 @@ npm start
 
 
 
-##### Developed by
+### Developed by
 
 [Irshit Mukherjee](https://github.com/IRSHIT033)
 
