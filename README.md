@@ -62,7 +62,7 @@ npm start
 
 [Irshit Mukherjee](https://github.com/IRSHIT033)
 
-[Priyanka Kothari](priyanka001tech (Priyanka Kothari) · GitHub](https://github.com/priyanka001tech)
+[Priyanka Kothari](https://github.com/priyanka001tech)
 
 [Rwitesh Bera](https://github.com/rwiteshbera)
 
