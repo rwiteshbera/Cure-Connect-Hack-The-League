@@ -12,12 +12,15 @@ export default function List(props) {
         <ul className="list-group mb-0">
           {props.requests.length > 0 &&
             props.requests.map((req, i) => {
+              console.log(req._id);
               return (
                 <Props
                   key={i}
+                  putID={req._id}
                   name={req.sender.name}
                   phone={req.sender.phone}
                   roomid={props.roomid}
+                  ReqID={req._id}
                 />
               );
             })}

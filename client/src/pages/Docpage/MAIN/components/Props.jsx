@@ -7,7 +7,15 @@ const Props = (props) => {
   const video_call = async () => {
     localStorage.setItem("patientPhone", props.phone);
     navigate("/Videocall_room");
-
+    const id = props.putID;
+    console.log("id is", id);
+    const config = {
+      headers: {
+        "Content-type": "application/json",
+      },
+    };
+    const res = await axios.put("/api/requests/deleterequest", { id }, config);
+    console.log(res);
   };
 
   return (
@@ -26,6 +34,7 @@ const Props = (props) => {
           onClick={() => video_call(props.phone, props.roomid)}
           data-mdb-toggle="tooltip"
           title="Remove item"
+          className="btn-vdo"
         >
           <i className="fas fa-video"></i>
         </button>
