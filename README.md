@@ -20,6 +20,10 @@
 
 - Dasha.AI
 
+- Socket.Io
+
+- JWT
+
 ###### Getting Started
 
 - Clone the repository and install all the necessary dependencies in both server and client side.
