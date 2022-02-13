@@ -2,8 +2,6 @@
 
 ###### A digital healthcare platform that enables people to consult with top doctors on video conferences. Cure Connect connects the doctors and the patients within few seconds.
 
-
-
 ###### Built using
 
 - ReactJs
@@ -19,8 +17,6 @@
 - Twilio
 
 - Dasha.AI
-
-
 
 ###### Getting Started
 
@@ -57,5 +53,17 @@ npx dasha account login
 ```bash
 npm start
 ```
+
+
+
+##### Developed by
+
+[Irshit Mukherjee](https://github.com/IRSHIT033)
+
+[Priyanka Kothari](priyanka001tech (Priyanka Kothari) · GitHub](https://github.com/priyanka001tech)
+
+[Rwitesh Bera](https://github.com/rwiteshbera)
+
+[Arnab Chatterjee](https://github.com/arnab2001)
 
 
