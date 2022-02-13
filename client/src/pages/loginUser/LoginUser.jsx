@@ -32,6 +32,7 @@ const Userlogin = () => {
             console.log(data.msg);
           } else {
             localStorage.setItem("Info", JSON.stringify(data));
+            localStorage.setItem("type", "Patient");
             setUserLoggedIn(true);
           }
         } catch (err) {

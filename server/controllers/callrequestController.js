@@ -2,17 +2,17 @@ const CALL = require("../models/CALL_req.js");
 const asyncHandler = require("express-async-handler");
 
 const sendRoomid = asyncHandler(async (req, res) => {
-  const { phone } = req.body;
-  const { msg } = req.body;
+  const { patientPhone } = req.body;
+  const { me } = req.body;
   const accountSid = "AC7a18f6bb30af812ce19f038d016bd4f1";
   const authToken = "1f886b11ee4fe89fa1079e6f6899e976";
   const client = require("twilio")(accountSid, authToken);
 
   client.messages
     .create({
-      body: msg,
+      body: ` Cure Connect Meeting ID: ${me}`,
       messagingServiceSid: "MG0939de83f51236c0700606d29c196c63",
-      to: phone,
+      to: patientPhone
     })
     .then((m) => res.json(m))
     .done();

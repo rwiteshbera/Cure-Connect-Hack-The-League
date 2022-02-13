@@ -1,10 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { SocketContext } from "./SocketContext";
-import { Button} from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import axios from "axios";
 import "./video.css";
 
-const Video = () => {  
+const Video = () => {
   const {
     me,
     name,
@@ -19,13 +20,18 @@ const Video = () => {
     call,
     answerCall,
     turnCameraOn,
-    turnCameraOff
+    turnCameraOff,
   } = useContext(SocketContext);
 
   const [idToCall, setIdToCall] = useState("");
   const [muteBtnText, setMuteBtnText] = useState("Mute Audio");
-  const [turnCameraOnOff, setTurnCameraOnOff] = useState("Turn Camera On");
+  const [turnCameraOnOff, setTurnCameraOnOff] = useState("Turn On Camera");
 
+  useEffect(() => {
+    var DoctorName = JSON.parse(localStorage.getItem("Info"))
+    setName(DoctorName.name)
+  }, [])
+  
   // Button to mute audio
   const MuteUnmute = () => {
     if (muteBtnText === "Mute Audio") {
@@ -47,18 +53,31 @@ const Video = () => {
   };
 
   const camerOnOff = () => {
-    if (turnCameraOnOff === "Turn Camera Off") {
+    if (turnCameraOnOff === "Turn Off Camera") {
       turnCameraOff();
-      setTurnCameraOnOff("Turn Camera On");
-    } else if (turnCameraOnOff === "Turn Camera On") {
+      setTurnCameraOnOff("Turn On Camera");
+    } else if (turnCameraOnOff === "Turn On Camera") {
       turnCameraOn();
-      setTurnCameraOnOff("Turn Camera Off");
+      setTurnCameraOnOff("Turn Off Camera");
     }
-  }
+  };
+
+  const sendMeetingID = () => {
+    let patientPhone= localStorage.getItem("patientPhone");
+    patientPhone = JSON.parse(patientPhone);
+    console.log(patientPhone)
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    axios.post("/api/requests/sentroomID", { patientPhone, me }, config);
+  };
 
   return (
     <div className="main-custom">
-      <h4 id="#title-custom">HealthCare Video Conference</h4>
+      <h4 id="#title-custom">Cure Connect Video Conference</h4>
 
       {/* Incoming Call Panel  */}
       <div className="notification">
@@ -102,16 +121,9 @@ const Video = () => {
             </Button>
           )}
           <form action="" noValidate autoComplete="off">
-            <input
-              placeholder="Your name"
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <CopyToClipboard text={me}>
-              <Button className="button-custom">Copy Id</Button>
-            </CopyToClipboard>
-              
+              <Button onClick={sendMeetingID} className="button-custom">
+              Send Meeting ID
+            </Button>
             <input
               type="text"
               id="enter-id"
@@ -121,7 +133,10 @@ const Video = () => {
             />
 
             {callAccepted && !callEnded ? (
-              <Button className="button-custom btn btn-danger" onClick={leaveCall}>
+              <Button
+                className="button-custom btn btn-danger"
+                onClick={leaveCall}
+              >
                 Hang Up
               </Button>
             ) : (
@@ -135,7 +150,9 @@ const Video = () => {
               </Button>
             )}
 
-            <Button className="btn btn-success" onClick={camerOnOff}>{turnCameraOnOff}</Button>
+            <Button className="btn btn-success" onClick={camerOnOff}>
+              {turnCameraOnOff}
+            </Button>
           </form>
         </div>
       </div>

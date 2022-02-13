@@ -4,18 +4,12 @@ import axios from "axios";
 
 const Props = (props) => {
   const navigate = useNavigate();
-  const video_call = async (phone, msg) => {
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-
-    axios.post("/api/requests/sentroomID", { phone, msg }, config);
+  const video_call = async () => {
+    localStorage.setItem("patientPhone", props.phone);
     navigate("/Videocall_room");
 
-
   };
+
   return (
     <>
       <li className="list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
@@ -29,9 +23,7 @@ const Props = (props) => {
           {props.name}
         </div>
         <button
-          onClick={() => {
-            video_call(props.phone, props.roomid);
-          }}
+          onClick={() => video_call(props.phone, props.roomid)}
           data-mdb-toggle="tooltip"
           title="Remove item"
         >
