@@ -15,10 +15,6 @@ export default function Patient() {
   const [docs, setDocs] = useState();
 
   const navigate = useNavigate();
-  const logoutHandler = () => {
-    localStorage.removeItem("Info");
-    navigate("/");
-  };
 
   const fetch_all_doc = async () => {
     try {
@@ -76,9 +72,9 @@ export default function Patient() {
 
   return (
     <>
-      <button onClick={CALL}>Call</button>
-      <br />
-      <button onClick={video_call}>video_Call</button>
+      <button className="btn btn-success join-btn-custom m-4" onClick={CALL}>
+        Listen Covid Protocols
+      </button>
       <DocList />
       <div className="docList row row-cols-1 mt-2 mx-5 d-flex justify-content-center">
         {docs &&
@@ -109,14 +105,12 @@ export default function Patient() {
                 like about the doctor, Hours of Operation, Awards, Office Video,
                 testimonials
               </p>
-              <button type="button" className="btn btn-success join-btn-custom">
-                <a
-                  className="textjoin"
-                  href="https://video-call-healthcare.netlify.app/"
-                  target="__blank"
-                >
-                  Join Room
-                </a>
+              <button
+                type="button"
+                className="btn btn-success join-btn-custom"
+                onClick={video_call}
+              >
+                Join Room
               </button>
             </div>
           </div>

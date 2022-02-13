@@ -14,7 +14,7 @@ export default function Login() {
 
   const SubmitHandeler = async (e) => {
     e.preventDefault();
-     if (!email || !password) {
+    if (!email || !password) {
       toast({
         title: "Please Fill all the Feilds",
         status: "warning",
@@ -38,26 +38,10 @@ export default function Login() {
         },
         config
       );
-      toast({
-        title: "Login Successful",
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-        position: "bottom",
-      });
+
       localStorage.setItem("Info", JSON.stringify(data));
       navigate("/Doctor");
-    } catch (err) {
-      toast({
-        title: "Login Successful",
-        status: "error",
-         description: err.response.data.message,
-        duration: 5000,
-        isClosable: true,
-        position: "bottom",
-      });
-
-    }
+    } catch (err) {}
   };
 
   return (
@@ -66,32 +50,31 @@ export default function Login() {
       <div className="login">
         <p className="loginTitle">Welcome Back !!!</p>
         <div className="log-div-container">
-              <form className="loginForm">
-                <label>Email</label>
-                <input
-                  type="text"
-                  className="loginInput"
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your Email..."
-                />
-                <label>Password</label>
-                <input
-                  type="password"
-                  className="loginInput"
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter your password..."
-                />
-                <button className="loginButton" onClick={SubmitHandeler}>
-                  Login
-                </button>
-              </form>
-              
-                <Link to="/register" className="link log-text">
-                <button className="loginRegisterButton">Register</button>
-                </Link>
+          <form className="loginForm">
+            <label>Email</label>
+            <input
+              type="text"
+              className="loginInput"
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your Email..."
+            />
+            <label>Password</label>
+            <input
+              type="password"
+              className="loginInput"
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter your password..."
+            />
+            <button className="loginButton" onClick={SubmitHandeler}>
+              Login
+            </button>
+          </form>
 
-            <div className="log-img-div">
-            </div>
+          <Link to="/register" className="link log-text">
+            <button className="loginRegisterButton">Register</button>
+          </Link>
+
+          <div className="log-img-div"></div>
         </div>
       </div>
     </>

@@ -42,15 +42,15 @@ const sendREQ = asyncHandler(async (req, res) => {
 });
 
 const delReq = asyncHandler(async (req, res) => {
-  const { id } = req.body;
-  if (!id) {
+  const { senderid } = req.body;
+  if (!senderid) {
     console.log("Invalid Data");
     return res.status(400);
   }
   try {
-    var req = await CALL.remove({ id }, function (err) {
+    var req = await CALL.findByIdAndDelete(senderid, function (err) {
       console.log("deleted");
-    });
+    }).clone();
     res.json("deleted successful");
   } catch (err) {
     res.status(400);

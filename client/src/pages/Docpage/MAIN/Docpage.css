@@ -6,10 +6,18 @@
 }
 
 .docpage {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap:wrap;
-    gap: 2rem;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+}
+
+.btn-vdo {
+  padding: 0.8rem 1rem;
+  background: #00aacf;
+  border: none;
+  border-radius: 50%;
+  color: white;
 }
